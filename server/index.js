@@ -15,6 +15,9 @@ connectDB();
 const authRoutes = require('./routes/authRoutes')
 app.use('/api/auth', authRoutes)
 
+const projectRoutes = require('./routes/projectRoutes')
+app.use('/api/projects', projectRoutes)
+
 app.get('/', (req, res) => {
     res.send("API is running...")
 });

@@ -1,12 +1,11 @@
-const express = require('express')
-const router = express.router()
+const express = require('express');
+const router = express.Router();
 
-const { createProject, getProject} = require('../controllers/projectController')
-const protect = require('../middleware/authMiddleware')
-const authorizeRoles = require('../middleware/roleMiddleware')
+const { createProject, getProjects } = require('../controllers/projectController');
+const protect = require('../middleware/authMiddleware');
+const authorizeRoles = require('../middleware/roleMiddleware');
 
-route.post('/', protect, authorizeRoles('freelancer'), createProject);
-route.get('/', getProject);
+router.post('/', protect, authorizeRoles('freelancer'), createProject);
+router.get('/', getProjects);
 
-module.exports = router();
-
+module.exports = router;
